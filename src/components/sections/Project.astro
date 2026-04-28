@@ -1,0 +1,120 @@
+---
+import bgProject from "../../assets/images/bgProject.webp";
+import FooterIc from "../../components/icons/euc.astro";
+---
+
+<section id="project">
+    <div
+        class="project-bg h-screen"
+        style={`background-image: url(${bgProject.src})`}
+        aria-hidden="true"
+    >
+    </div>
+
+    <div class="text-center md:text-left pt-20! absolute top-0 left-0 right-0 md:pt-30!">
+        <div class="container project-grid">
+            <div>
+                <p class="text-white dark:text-black text-sm md:text-lg">
+                    En el corazón del desierto más árido del mundo, nace una
+                    experiencia que invitar a descubrir
+                </p>
+                <span class="project-chile text-6xl md:text-8xl text-yellow-600 dark:text-yellow-900">Chile.</span>
+                <p class="text-white dark:text-black text-sm md:text-lg">
+                    Desde una perspectiva sensorial, cultural y profundamente
+                    auténtica.
+                </p>
+            </div>
+            <div>
+                <p class="text-yellow-600 dark:text-yellow-900 text-2xl font-bold md:text-5xl md:leading-12">
+                    Nuestro proyecto propone un viaje único.
+                </p>
+                <p class="text-white dark:text-black  text-sm md:text-lg md:leading-10 mt-8!">
+                    recorrer la diversidad geográfica y cultural del país a
+                    través de una cuidada selección de vinos que representan sus
+                    distintos valles, climas y tradiciones.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo EUC + EnunaCopa centrado sobre la imagen -->
+    <div class="project-brand mb-30!" aria-hidden="true">
+        <div class="project-brand-icon" aria-hidden="true">
+            <FooterIc width="90%" height="90%" class="text-white dark:text-black"/>
+        </div>
+        <h2 class="project-brand-name text-7xl md:text-9xl text-black dark:text-white">EnunaCopa</h2>
+    </div>
+</section>
+
+<style>
+    #project {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* ── Imagen fondo ────────────────────────────────────────────── */
+    .project-bg {
+        width: 100%;
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+
+    /* ── Overlay con texto encima de la imagen ───────────────────── */
+    .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: flex-start;
+        padding-top: clamp(4rem, 5vw, 8rem);
+    }
+
+    .project-grid {
+        width: 70%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: start;
+    }
+
+    @media (max-width: 640px) {
+        .project-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .project-chile {
+        font-family: var(--font-display);
+        line-height: 1;
+        display: block;
+        margin-block: 0.25rem 0.5rem;
+    }
+
+    /* ── Brand centrado sobre la imagen ─────────────────────────── */
+    .project-brand {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        /* Sin flex — usamos stacking */
+        display: grid;
+        place-items: center;
+        padding-bottom: 1rem;
+    }
+
+    .project-brand-icon {
+        grid-area: 1 / 1; /* misma celda que el texto */
+        z-index: 0;
+    }
+
+    .project-brand-name {
+        grid-area: 1 / 1; /* misma celda — encima */
+        z-index: 1;
+        font-family: var(--font-display);
+        font-weight: 400;
+        line-height: 1;
+    }
+</style>

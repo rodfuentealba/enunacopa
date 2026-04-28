@@ -1,4 +1,9 @@
 @import 'tailwindcss';
+
+@source "../components/**/*.astro";
+@source "../pages/**/*.astro";
+@source "../layouts/**/*.astro";
+
 @custom-variant dark (&:where(.dark, .dark *));
 /* ─── Tailwind 4 theme tokens ───────────────────────────────────── */
 @theme {
@@ -96,3 +101,18 @@ h4 {
     background: rgba(232, 25, 125, 0.15);
     color: var(--color-accent);
 }
+
+/* Placeholders */
+	.placeholder {
+		border-top: 1px solid var(--color-border);
+		min-height: 40vh;
+		display: flex;
+		align-items: center;
+	}
+	.ph-label {
+		font-family: var(--font-sans);
+		font-size: 0.8125rem;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}

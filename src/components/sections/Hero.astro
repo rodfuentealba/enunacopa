@@ -1,0 +1,145 @@
+<section id="hero" class="hero">
+		<div class="hero-bg" aria-hidden="true">
+		</div>
+
+		<div class="container hero-content">
+			<p class="eyebrow text-gray-950 dark:text-white">Camilo Chávez · Sommelier Internacional</p>
+
+			<h1 class="tagline text-pink-500">
+				El vino no se toma.<br /> Se interpreta.
+			</h1>
+
+			<p class="sub text-black dark:text-white">
+				Es más que una degustación — es una invitación a<br />
+				<em>descubrir, sentir y recordar.</em>
+			</p>
+
+			<a href="#project" class="cta-btn">
+				Saber más
+				<svg
+					width="14"
+					height="14"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					aria-hidden="true"
+				>
+					<line x1="12" y1="5" x2="12" y2="19"></line>
+					<polyline points="19 12 12 19 5 12"></polyline>
+				</svg>
+			</a>
+		</div>
+
+		<div class="scroll-hint" aria-hidden="true">
+			<span class="scroll-line"></span>
+		</div>
+	</section>
+
+<style>
+	.hero {
+		position: relative;
+		min-height: 100svh;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		background: var(--color-bg);
+		padding-top: calc(var(--nav-h) + 44px);
+		text-align: center;
+	}
+	.hero-bg {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+	}
+
+	/* Contenido */
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		max-width: 900px;
+	}
+
+	.eyebrow {
+		font-family: var(--font-serif);
+		font-size: clamp(0.6875rem, 1.2vw, 0.8125rem);
+		font-weight: 500;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		margin-bottom: clamp(1.25rem, 3vw, 2rem);
+
+	}
+
+	.tagline {
+		display: flex;
+		flex-direction: column;
+		gap: 0.05em;
+		margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+		font-family: var(--font-display);
+		font-size: clamp(3.5rem, 9vw, 8.5rem);
+		font-weight: 400;
+		line-height: 0.55;
+	}
+
+	.sub {
+		font-family: var(--font-serif);
+		font-size: clamp(1rem, 2vw, 1.25rem);
+		line-height: 1.75;
+		margin-bottom: clamp(2rem, 5vw, 3.5rem);
+	}
+	.sub em {
+		font-style: italic;
+	}
+
+	.cta-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-family: var(--font-serif);
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding-bottom: 3px;
+		transition:
+			gap 0.25s var(--ease-out),
+			opacity 0.2s;
+	}
+	.cta-btn:hover {
+		gap: 0.875rem;
+		opacity: 0.75;
+	}
+
+	.scroll-hint {
+		position: absolute;
+		bottom: 2.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.scroll-line {
+		display: block;
+		width: 1px;
+		height: 56px;
+		background: linear-gradient(
+			to bottom,
+			var(--color-accent),
+			transparent
+		);
+		animation: pulse 2s ease-in-out 1.5s infinite;
+	}
+	@keyframes pulse {
+		0%,
+		100% {
+			transform: scaleY(1);
+			opacity: 1;
+		}
+		50% {
+			transform: scaleY(0.6);
+			opacity: 0.4;
+		}
+	}
+</style>
+
