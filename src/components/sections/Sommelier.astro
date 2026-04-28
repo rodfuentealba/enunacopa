@@ -1,0 +1,214 @@
+---
+// Sommelier.astro
+// Uvas
+import grapeMedium from "../../assets/images/grapeMedium.png";
+import grapeSmall from "../../assets/images/grapeSmall.png";
+import grapeBlur from "../../assets/images/grapeBlur.png";
+// Fotos de Camilo — efecto multiplicación
+import camiloFullBg from "../../assets/images/camiloFullBg.png";
+import camiloFull from "../../assets/images/camiloFull.png";
+import camilo02 from "../../assets/images/camilo02.png";
+import camilo03 from "../../assets/images/camilo03.png";
+import Dialog from "../icons/dialog.astro";
+import Wset from "../icons/wset.astro";
+---
+
+<section id="sommelier" class="relative w-full min-h-screen overflow-hidden flex items-end">
+    <div class="absolute inset-0 z-0" aria-hidden="true">
+        <Dialog class="dialog absolute inset-0 z-1 text-amber-100 dark:text-amber-800" />
+        <img
+            src={camiloFullBg.src}
+            alt=""
+            class="absolute w-full h-full inset-0 object-cover object-top  som-layer-bg"
+            data-gsap="camilo-bg"
+        />
+        <img
+            src={camiloFull.src}
+            alt=""
+            class="absolute hidden lg:block right-0 top-35 som-layer-03"
+            data-gsap="camilo-1"
+        />
+        <img
+            src={camilo02.src}
+            alt=""
+            class="absolute hidden lg:block right-0 top-15 som-layer-02"
+            data-gsap="camilo-2"
+        />
+        <img
+            src={camilo03.src}
+            alt=""
+            class="absolute hidden lg:block right-0 top-25 som-layer-01"
+            data-gsap="camilo-3"
+        />
+    </div>
+
+    <!-- ── Overlay degradado para legibilidad ────────────────────── -->
+    <div class="absolute inset-0 z-0.5 bg-linear-to-t from-yellow-50 to-yellow-100/0 dark:from-yellow-950 dark:to-yellow-950/0" aria-hidden="true"></div>
+
+    <!-- ── Uvas flotantes ────────────────────────────────────────── -->
+    <div class="absolute inset-0 z-2 pointer-events-none" aria-hidden="true">
+        <img
+            src={grapeMedium.src}
+            alt=""
+            class="grape-3 top-[35%] left-[40%] md:top-[35%] md:left-[50%] lg:top-[35%] lg:left-[43%] absolute grape-medium"
+            data-gsap="float"
+        />
+        <img
+            src={grapeSmall.src}
+            alt=""
+            class="grape-2 top-[15%] left-[0%] md:top-[25%] md:left-[0%] lg:top-[10%] lg:left-[12%] absolute grape-small"
+            data-gsap="float"
+        />
+        <img
+            src={grapeBlur.src}
+            alt=""
+            class="grape-1 top-[0%] left-[30%] md:-top-20 md:left-[40%] lg:-top-20 lg:left-[35%] absolute grape-blur"
+            data-gsap="float"
+        />
+    </div>
+
+        <!-- Nombre en tipografía display -->
+        <div class="absolute left-[12%] top-45 md:left-[20%] md:top-40 lg:left-[23%] lg:top-[15%] rotate-[-20deg]">
+            <h2 class="som-name">
+                <span class="som-name-line text-yellow-800 dark:text-yellow-200">Camilo</span>
+                <span class="som-name-line text-yellow-800 dark:text-yellow-200">Chávez</span>
+            </h2>
+        </div>
+
+        <!-- Título + año -->
+        <div class="absolute left-10 top-100 md:left-30 lg:left-60 lg:top-100">
+            <p class="som-role text-pink-800 dark:text-white">
+                <span class="som-role-s text-pink-800 dark:text-white">S</span>ommelier
+            </p>
+            <p class="som-since uppercase text-pink-800 dark:text-white">since 2015</p>
+        </div>
+        
+        <!-- Badge WSET -->
+        <div class="absolute left-10 bottom-20 md:left-30 lg:left-60 lg:bottom-15 flex flex-col items-start gap-1">
+            <a href="https://www.wsetglobal.com/es/spanish-qualifications/" class="hover:scale-105" target="_blank">
+                <Wset class="text-black dark:text-white"/>
+            </a>
+            <div class="p-0">
+                <p class="text-black dark:text-white">Sommelier Internacional</p>
+                <p class="text-black dark:text-white"><em>Certificado WSET 3</em></p>
+            </div>
+            <!-- Info adicional -->
+            <div class="som-info text-black dark:text-white">
+                <p>Traductor de Idiomas</p>
+                <p>Especializado en vinos</p>
+                <p>del viejo y del nuevo mundo</p>
+            </div>
+        </div>
+</section>
+
+<style>
+    .dialog {
+        width: 73%;
+        height: 60%;
+    }
+    .som-layer-bg {
+        z-index: 0;
+        opacity: 1;
+    }
+
+    .som-layer-03 {
+        width: 60%;
+        z-index: 3;
+        opacity: 1;
+    }
+
+    .som-layer-02 {
+        width: 42%;
+        z-index: 1;
+        opacity: 1;
+    }
+
+    .som-layer-01 {
+        width: 43%;
+        z-index: 2;
+        opacity: 1;
+    }
+
+    .som-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 0.5;
+    }
+
+    .som-grapes {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .grape-1 {
+        width: clamp(150px, 25vw, 240px);
+        z-index: 4;
+    }
+    .grape-2 {
+        width: clamp(80px, 15vw, 110px);
+    }
+    .grape-3 {
+        width: clamp(120px, 15vw, 180px);
+    }
+
+    .grape-placeholder {
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, #9b2d6f, #4a0d2e);
+        aspect-ratio: 1;
+        opacity: 0.7;
+    }
+
+    .som-name {
+        font-family: var(--font-display);
+        display: flex;
+        flex-direction: column;
+        line-height: 0.65;
+    }
+
+    .som-name-line {
+        font-size: clamp(6rem, 12vw, 12rem);
+        font-weight: 400;
+    }
+
+    .som-title-block {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .som-role {
+        font-family: var(--font-sans);
+        font-size: clamp(2.5rem, 6vw, 5.5rem);
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    .som-role-s {
+        font-family: var(--font-display);
+        font-size: 1.5em;
+        display: inline-block;
+        transform: translateY(0.05em);
+    }
+
+    .som-since {
+        font-family: var(--font-sans);
+        font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+        font-weight: 600;
+        margin-top: 0.25rem;
+    }
+
+    @media (max-width: 767px) {
+        .dialog {
+            width: 70%;
+            height:60%;
+        }
+        .som-content {
+            grid-template-columns: 1fr;
+        }
+        .som-certs {
+            grid-column: 1;
+            grid-row: 3;
+        }
+    }
+</style>
