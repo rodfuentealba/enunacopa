@@ -1,0 +1,153 @@
+---
+import Separator from '../icons/separator.astro'
+import SeparatorMobile from '../icons/separatorMobile.astro'
+import ConchaYToro from '../icons/logos/conchaytoro.astro'
+import MiguelTorres from '../icons/logos/migueltorres.astro'
+import Emiliana from '../icons/logos/emiliana.astro'
+import Matetic from '../icons/logos/matetic.astro'
+import bgJobs from '../../assets/images/bgJobs.png'
+---
+
+<section id="jobs" class="jobs bg-yellow-50 text-yellow-800 dark:bg-yellow-950 dark:text-yellow-100">
+  <div class="jobs-inner">
+    <!-- Izquierda: Títulos + Logos -->
+    <div class="jobs-content mt-0 md:mt-20!">
+      <h2 class="jobs-title text-right">
+        <span class="jobs-title-script">C</span>onfiaron
+        <br>en mí
+      </h2>
+
+      <div class="flex flex-col items-center gap-12 mt-10!">
+        <a href="https://conchaytoro.com/" target="_blank" class="hover:scale-105 transition-all">
+          <ConchaYToro class="job-logo text-yellow-800 dark:text-yellow-100" />
+        </a>
+        <a href="https://www.migueltorres.cl/" target="_blank" class="hover:scale-105 transition-all">
+          <MiguelTorres class="job-logo text-yellow-800 dark:text-yellow-100" />
+        </a>
+        <a href="https://www.emiliana.cl/" target="_blank" class="hover:scale-105 transition-all">
+          <Emiliana class="job-logo text-yellow-800 dark:text-yellow-100" />
+        </a>
+        <a href="https://matetic.com/" target="_blank" class="hover:scale-105 transition-all">
+          <Matetic class="job-logo text-yellow-800 dark:text-yellow-100" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Derecha: Imagen + Separadores -->
+    <div class="jobs-image-wrapper">
+      <Separator class="jobs-separator-v absolute hidden md:block top-0 left-0 text-yellow-50 dark:text-yellow-950" />
+      <SeparatorMobile class="jobs-separator-h absolute block md:hidden top-0 left-0 w-full text-yellow-50 dark:text-yellow-950" />
+      <div class="jobs-image" aria-hidden="true">
+        <img
+          src={bgJobs.src}
+          alt="Camilo Chávez con botella de vino"
+          class="jobs-image-img"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .jobs {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .jobs-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    height: 100svh;
+  }
+
+  /*  Wrapper imagen + separators ─────────────────────────── */
+  .jobs-image-wrapper {
+    position: relative;
+    height: 100%;
+  }
+
+  /*  Separator vertical (desktop) ────────────────────────── */
+  .jobs-separator-v {
+    width: clamp(60px, 8vw, 120px);
+    height: 100%;
+    z-index: 3;
+  }
+
+  /*  Separator horizontal (mobile) ────────────────────────── */
+  .jobs-separator-h {
+    width: 100%;
+    height: clamp(40px, 6vw, 60px);
+    z-index: 3;
+  }
+
+  /* ── Contenido izquierdo ────────────────────────────────────── */
+  .jobs-content {
+    z-index: 2;
+    margin: 0 auto;
+  }
+
+  .jobs-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 600;
+    line-height: 0.6;
+    margin-top: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .jobs-title-script {
+    font-family: var(--font-display);
+    font-size: 1.2em;
+  }
+
+  .job-logo {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    transition: color 0.3s var(--ease-out);
+  }
+
+  /* ─ Imagen derecha ─────────────────────────────────────────── */
+  .jobs-image {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .jobs-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  /* ── Mobile ─────────────────────────────────────────────────── */
+  @media (max-width: 767px) {
+    .jobs {
+      height: auto;
+    }
+
+    .jobs-inner {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+
+    .jobs-image-wrapper {
+      height: auto;
+      padding-top: clamp(40px, 6vw, 60px);
+    }
+
+    .jobs-content {
+      padding-block: clamp(3rem, 6vw, 4rem);
+    }
+
+    .jobs-image {
+      position: relative;
+      width: 100%;
+      height: 50svh;
+    }
+
+    .jobs-image-img {
+      object-position: center;
+    }
+  }
+</style>
