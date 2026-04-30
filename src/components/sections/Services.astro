@@ -1,79 +1,105 @@
 ---
-import bgServices from "../../assets/images/bgServices.png";
+import bgServices from "../../assets/images/bgServices.jpg";
 import IconTime from "../icons/iconTime.astro";
 
 const services = [
-  {
-    firstLetter: "D",
-    restOfTitle: "escubre",
-    price: "$30.000 P/P - $25.000 TTOO",
-    strongDescription: "<strong>3 copas:</strong>",
-    description: "1 vino blanco, 1 vino tinto suave y 1 vino tinto de cuerpo. cluido.",
-    time: "40-50 MIN."
-  },
-  {
-    firstLetter: "E",
-    restOfTitle: "xplora",
-    price: "$40.000 P/P - $33.000 TTOO",
-    strongDescription: "<strong>5 copas:</strong>",
-    description: "2 vinos blancos y 3 tintos de distinta intensidad.",
-    time: "80-90 MIN."
-  },
-  {
-    firstLetter: "S",
-    restOfTitle: "umérgete",
-    price: "$50.000 P/P - $42.000 TTOO",
-    strongDescription: "<strong>7 copas:</strong>",
-    description: "1 copa de espumante, 2 copas de blanco, 4 copas de tinto de distinta intensidad.",
-    time: "80-90 MIN."
-  }
+    {
+        firstLetter: "D",
+        restOfTitle: "escubre",
+        price: "$30.000 P/P - $25.000 TTOO",
+        strongDescription: "<strong>3 copas:</strong>",
+        description:
+            "1 vino blanco, 1 vino tinto suave y 1 vino tinto de cuerpo. cluido.",
+        time: "40-50 MIN.",
+    },
+    {
+        firstLetter: "E",
+        restOfTitle: "xplora",
+        price: "$40.000 P/P - $33.000 TTOO",
+        strongDescription: "<strong>5 copas:</strong>",
+        description: "2 vinos blancos y 3 tintos de distinta intensidad.",
+        time: "80-90 MIN.",
+    },
+    {
+        firstLetter: "S",
+        restOfTitle: "umérgete",
+        price: "$50.000 P/P - $42.000 TTOO",
+        strongDescription: "<strong>7 copas:</strong>",
+        description:
+            "1 copa de espumante, 2 copas de blanco, 4 copas de tinto de distinta intensidad.",
+        time: "80-90 MIN.",
+    },
 ];
 ---
 
-<section id="services" class="relative w-full min-h-screen overflow-hidden flex items-center">
+<section
+    id="services"
+    class="relative w-full min-h-screen overflow-hidden flex items-center"
+>
     <div class="absolute inset-0 z-0" aria-hidden="true">
-        <img
-            src={bgServices.src}
-            alt=""
-            class="w-full h-full object-cover"
-        />
+        <img src={bgServices.src} alt="" class="w-full h-full object-cover" />
     </div>
 
-    <div class="absolute inset-0 z-5 bg-linear-to-tr from-yellow-50 to-yellow-50/0 dark:from-pink-950 dark:to-pink-950/0" aria-hidden="true"></div>
+    <div
+        class="absolute inset-0 z-5 bg-linear-to-tr from-yellow-50 to-yellow-50/0 dark:from-pink-950 dark:to-pink-950/0"
+        aria-hidden="true"
+    >
+    </div>
 
     <div class="relative z-10 w-full">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 min-h-screen">
-                <div class="flex flex-col items-center justify-center gap-4 py-20!">
-                    {services.map((service) => (
-                        <div class="text-center md:text-left w-full max-w-md">
-                            <h3 class="ser-role text-pink-800 dark:text-white">
-                                <span class="ser-role-s text-pink-800 dark:text-white">{service.firstLetter}</span>{service.restOfTitle}
-                            </h3>
-                            <p class="text-2xl font-semibold text-amber-500 dark:text-lime-400 mb-3!">
-                                {service.price}
-                            </p>
-                            <p class="ser-serif text-md text-gray-700 dark:text-gray-300 max-w-md" set:html={service.strongDescription}>
-                            </p>
-                            <p class="ser-serif text-md text-gray-700 dark:text-gray-300 mb-4! max-w-md" set:html={service.description}>
-                            </p>
-                            <span class="inline-flex items-center px-4! py-1! uppercase text-sm font-medium bg-pink-900 text-pink-200 dark:bg-pink-600 dark:text-pink-200 rounded-full">
-                                <IconTime class="me-2!"/>
-                                {service.time}
-                            </span>
-                        </div>
-                    ))}
+                <div
+                    class="flex flex-col items-center justify-center gap-4 py-20!"
+                >
+                    {
+                        services.map((service) => (
+                            <div class="text-center md:text-left w-full max-w-md">
+                                <h3 class="ser-role text-pink-800 dark:text-white">
+                                    <span class="ser-role-s text-pink-800 dark:text-white">
+                                        {service.firstLetter}
+                                    </span>
+                                    {service.restOfTitle}
+                                </h3>
+                                <p class="text-2xl font-semibold text-amber-500 dark:text-lime-400 mb-3!">
+                                    {service.price}
+                                </p>
+                                <p
+                                    class="ser-serif text-md text-gray-700 dark:text-gray-300 max-w-md"
+                                    set:html={service.strongDescription}
+                                ></p>
+                                <p
+                                    class="ser-serif text-md text-gray-700 dark:text-gray-300 mb-4! max-w-md"
+                                    set:html={service.description}
+                                ></p>
+                                <span class="inline-flex items-center px-4! py-1! uppercase text-sm font-medium bg-pink-900 text-pink-200 dark:bg-pink-600 dark:text-pink-200 rounded-full">
+                                    <IconTime class="me-2!" />
+                                    {service.time}
+                                </span>
+                            </div>
+                        ))
+                    }
                 </div>
 
                 <div class="flex flex-col justify-end pb-20!">
                     <div class="flex flex-col items-start gap-2">
-                        <p class="text-xs font-bold text-gray-800 dark:text-white">Todas las degustaciones incluyen pan, aceitunas, aceite de oliva y queso mantecoso.</p>
+                        <p
+                            class="text-xs font-bold text-gray-800 dark:text-white"
+                        >
+                            Todas las degustaciones incluyen pan, aceitunas,
+                            aceite de oliva y queso mantecoso.
+                        </p>
                         <p class="text-xs text-gray-800 dark:text-white">
-                        * Incluye presentación visual de valles, terroir y bodega productora.</p>
+                            * Incluye presentación visual de valles, terroir y
+                            bodega productora.
+                        </p>
                         <p class="text-xs text-gray-800 dark:text-white">
-                        * Todas presentan, por lo menos, 3 valles chilenos diferentes.</p>
+                            * Todas presentan, por lo menos, 3 valles chilenos
+                            diferentes.
+                        </p>
                         <p class="text-xs text-gray-800 dark:text-white">
-                        *Mínimo para realizar son 6 pax y máximo 12 pax.</p>
+                            *Mínimo para realizar son 6 pax y máximo 12 pax.
+                        </p>
                     </div>
                 </div>
             </div>

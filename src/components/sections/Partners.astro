@@ -1,0 +1,96 @@
+---
+import bgPartners from "../../assets/images/bgPartners.jpg";
+
+const partners = [
+    {
+        firstLetter: "A",
+        restOfTitle: "gencias",
+        dot01:"<strong>Tarifa neta preferencial = Comisión por pasajero</strong>",
+        dot02:"Confirmación rápida y operación flexible",
+        dot03:"Material de apoyo <i>(descripción, imágenes, storytelling)</i>"
+    },
+    {
+        firstLetter: "H",
+        restOfTitle: "oteles",
+        dot01:"<strong>Experiencia para huéspedes (in situ o derivación)</strong>",
+        dot02:"Comisión por venta / fee por huésped",
+        dot03:"Posibilidad de eventos exclusivos para el hotel/hostal"
+    },
+    {
+        firstLetter: "P",
+        restOfTitle: "artners",
+        dot01:"Integración en experiencias combinadas <i>(gastronomía, wellness, etc.)</i>",
+        dot02:"Activaciones especiales o eventos",
+    },
+];
+---
+
+<section
+    id="partners"
+    class="relative w-full min-h-screen overflow-hidden flex items-center"
+>
+    <div class="absolute inset-0 z-0" aria-hidden="true">
+        <img
+            src={bgPartners.src}
+            alt=""
+            class="w-full h-full object-cover object-[65%_center] lg:object-center"
+        />
+    </div>
+
+    <div class="relative z-10 w-full">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 md:gap-50 min-h-screen">
+                <div class="flex flex-col items-center justify-end md:pb-30!">
+                    <p
+                        class="text-sm text-gray-300 dark:text-gray-300 max-w-md text-center md:text-left leading-relaxed"
+                    >
+                        En <strong class="text-emerald-300 dark:text-emerald-500"
+                            >En Una Copa</strong
+                        > trabajamos con alianzas estratégicas que nos permiten ofrecer
+                        experiencias auténticas y de alta calidad. Conoce nuestros
+                        tres pilares de colaboración.
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center gap-12"
+                >
+                    {
+                        partners.map((partner) => (
+                            <div class="text-center md:text-left w-full max-w-md">
+                                <h3 class="part-role text-emerald-300 dark:text-emerald-500">
+                                    <span class="part-role-s text-emerald-300 dark:text-emerald-500">
+                                        {partner.firstLetter}
+                                    </span>
+                                    {partner.restOfTitle}
+                                </h3>
+                                <p class="ser-serif text-md text-gray-300 dark:text-gray-300 max-w-md" set:html={partner.dot01}>
+                                </p>
+                                <p class="ser-serif text-md text-gray-300 dark:text-gray-300 max-w-md" set:html={partner.dot02}>   
+                                </p>
+                                <p class="ser-serif text-md text-gray-300 dark:text-gray-300 max-w-md" set:html={partner.dot03}>   
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .part-role {
+        font-family: var(--font-sans);
+        font-size: clamp(2rem, 4vw, 4rem);
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    .part-role-s {
+        font-family: var(--font-display);
+        font-size: 1.5em;
+        display: inline-block;
+        margin-right: -10px;
+    }
+</style>
