@@ -72,24 +72,6 @@ src/
 
 ---
 
-## Animaciones por sección
-
-| Sección | Efecto entrada | Efecto salida (scroll up) |
-|---|---|---|
-| **Navbar** | Logo ← izq · Controles → der · Texto centro ↓ arriba · Links ↑ abajo (stagger) | Fade out |
-| **Hero** | Todos los elementos ↑ desde abajo (stagger) en load | — |
-| **Project** | Columna izq ← izq · Columna der → der · Brand ↑ desde abajo | Fade out |
-| **Sommelier** | Nombre/rol/since ← izq · WSET scale-in · Info ↑ abajo | Fade out |
-| | Capas de Camilo: parallax con scrub (diferentes velocidades) | — |
-| | Uvas: flotación continua individual por controlador | — |
-| **Jobs** | Imagen: clip-path diagonal reveal · Título + logos ← izq (stagger) | Fade out |
-| **Services** | Tarjetas ← izq (stagger) · Footer notes → der (stagger) | Fade out |
-| **Partners** | Partners → der (stagger) · Intro ← izq | Fade out |
-| **Collab** | Texto medio ↓ arriba · Heading ↓ arriba · Small ↑ abajo | Fade out |
-| **Contact** | Imagen ↑ abajo · Brand scale desde centro (stagger) · Título ↑ abajo · Desc + CTA → der | Fade out |
-
----
-
 ## Multilenguaje
 
 Sitio con i18n nativo de Astro 6. Cambio de idioma via `data-astro-reload` (recarga completa para evitar conflictos con GSAP).
@@ -141,7 +123,6 @@ npm run preview  # Preview local del build
 
 ### Próximas iteraciones
 - [ ] Loader animado con transición GSAP
-- [ ] Formulario de contacto funcional
 - [ ] Optimización de imágenes y assets
 - [ ] Testing cross-browser
 
