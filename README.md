@@ -81,10 +81,10 @@ npm run preview  # Preview local del build
 - [x] Fade out en scroll up para todas las secciones
 - [x] Hook React `useAnimation` para islands
 - [x] Language switch con `data-astro-reload`
+- [x] Optimización de imágenes a WebP + video H.265 (—69% peso total)
 
 ### Próximas iteraciones
 - [ ] Loader animado con transición GSAP
-- [ ] Optimización de imágenes y assets
 - [ ] Testing cross-browser
 
 ---
