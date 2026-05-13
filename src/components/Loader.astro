@@ -1,0 +1,81 @@
+---
+import Logo from "./icons/euc.astro";
+import bgContact from "../assets/images/bgContact.webp";
+---
+
+<div id="page-loader" class="fixed inset-0 z-9999 bg-black flex items-center justify-center">
+  <div class="loader-bg absolute inset-0" style="opacity:0" aria-hidden="true">
+    <img src={bgContact.src} alt="" class="object-contain object-center w-full h-full"/>
+  </div>
+  <div class="relative z-10 flex flex-col items-center gap-0.5">
+    <span class="loader-chile font-normal text-pink-500 leading-1 z-10">Chile</span>
+    <Logo class="loader-logo" />
+    <span class="loader-name font-normal text-pink-500 leading-0 z-10">Camilo Chávez</span>
+  </div>
+</div>
+
+<style>
+  .loader-chile,
+  .loader-name {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 7rem);
+  }
+  .loader-logo {
+    width: clamp(60px, 20vw, 300px);
+    height: auto;
+    color: white;
+  }
+</style>
+
+<script>
+import { gsap } from '../animations'
+
+function initLoader() {
+  const loader = document.getElementById('page-loader')
+  if (!loader) return
+
+  const bg = loader.querySelector('.loader-bg')
+  const chile = loader.querySelector('.loader-chile')
+  const logo = loader.querySelector('.loader-logo')
+  const name = loader.querySelector('.loader-name')
+
+  const startTime = Date.now()
+  const MIN_DURATION = 2500
+
+  gsap.set(bg, { opacity: 0 })
+  gsap.set([chile, logo, name], { opacity: 0, scale: 0.3 })
+
+  const entryTl = gsap.timeline({ defaults: { ease: 'back.out(2)' } })
+
+  entryTl.to(bg, { opacity: 1, duration: 1, ease: 'power2.out' })
+    .to([chile, logo, name], {
+      opacity: 1,
+      scale: 1,
+      duration: 0.7,
+      stagger: 0.25,
+    }, '-=0.4')
+
+  function dismissLoader() {
+    const elapsed = Date.now() - startTime
+    const remaining = Math.max(0, MIN_DURATION - elapsed)
+    gsap.delayedCall(remaining / 1000, () => {
+      gsap.to(loader, {
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.inOut',
+        onComplete: () => {
+          loader!.style.display = 'none'
+        },
+      })
+    })
+  }
+
+  if (document.readyState === 'complete') {
+    dismissLoader()
+  } else {
+    window.addEventListener('load', dismissLoader)
+  }
+}
+
+initLoader()
+</script>

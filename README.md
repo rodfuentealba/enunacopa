@@ -82,9 +82,9 @@ npm run preview  # Preview local del build
 - [x] Hook React `useAnimation` para islands
 - [x] Language switch con `data-astro-reload`
 - [x] Optimización de imágenes a WebP + video H.265 (—69% peso total)
+- [x] Loader animado con entrada bounce + fade out al cargar página
 
 ### Próximas iteraciones
-- [ ] Loader animado con transición GSAP
 - [ ] Testing cross-browser
 
 ---
