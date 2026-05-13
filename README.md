@@ -26,49 +26,10 @@ El concepto **"En Una Copa"** es geográficamente escalable: _Chile en una Copa_
 
 ## Estructura
 
-```
-src/
-├── animations/
-│   ├── gsap.config.ts              ← registerPlugin, defaults globales
-│   ├── presets.ts                  ← fadeInUp/Down/Left/Right, scaleIn, floatLoop
-│   ├── sequences/
-│   │   ├── heroSequence.ts         ← Hero: entrada desde abajo
-│   │   ├── navbarEffects.ts        ← Navbar: logo, controles, texto, links
-│   │   ├── sommelierEffects.ts     ← Parallax, entry/exit, grape controllers
-│   │   ├── projectEffects.ts       ← Columnas desde izq/der, brand desde abajo
-│   │   ├── jobsEffects.ts          ← Clip-path reveal + staggered logos
-│   │   ├── servicesEffects.ts      ← Servicios desde izq, footer desde der
-│   │   ├── partnersEffects.ts      ← Partners desde der, intro desde izq
-│   │   ├── collabEffects.ts        ← Fade desde arriba/abajo
-│   │   ├── contactEffects.ts       ← Imagen, brand, título, desc + CTA
-│   │   └── pageTransition.ts       ← pageEnter / pageLeave
-│   └── index.ts                    ← barrel export
-├── components/
-│   ├── icons/                      ← SVGs (logos, decorativos)
-│   ├── layouts/
-│   │   └── Navbar.astro            ← Fixed nav con scroll spy, dark mode, i18n
-│   └── sections/
-│       ├── Hero.astro
-│       ├── Project.astro
-│       ├── Sommelier.astro
-│       ├── Jobs.astro
-│       ├── Services.astro
-│       ├── Partners.astro
-│       ├── Collab.astro
-│       └── Contact.astro
-├── hooks/
-│   └── useAnimation.ts             ← Hook React para consumir presets GSAP
-├── i18n/
-│   ├── es.json                     ← Español (base)
-│   ├── en.json                     ← English
-│   └── pt.json                     ← Português
-├── layouts/
-│   └── Layout.astro                ← Layout base + meta tags + ClientRouter
-├── pages/
-│   └── [locale]/index.astro        ← Página principal por idioma
-└── styles/
-    └── global.css                  ← Design tokens, dark mode, Tailwind v4
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./project-structure.svg">
+  <img src="./project-structure.svg" alt="Project structure" width="860">
+</picture>
 
 ---
 

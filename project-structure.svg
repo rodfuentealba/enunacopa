@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="960" viewBox="0 0 860 960" style="background:#0d1117; font-family: 'Segoe UI', 'SF Mono', monospace;">
+
+  <!-- Background card -->
+  <rect x="0" y="0" width="860" height="960" fill="#0d1117"/>
+
+  <!-- Title bar -->
+  <rect x="30" y="20" width="800" height="48" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <circle cx="58" cy="44" r="7" fill="#ff5f57"/>
+  <circle cx="80" cy="44" r="7" fill="#febc2e"/>
+  <circle cx="102" cy="44" r="7" fill="#28c840"/>
+  <text x="430" y="49" fill="#8b949e" font-size="13" text-anchor="middle" font-family="'Segoe UI', sans-serif">src/ — project structure</text>
+
+  <!-- Main box -->
+  <rect x="30" y="82" width="800" height="858" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ROOT -->
+  <rect x="54" y="108" width="56" height="26" rx="5" fill="#1f2d45" stroke="#388bfd" stroke-width="1"/>
+  <text x="82" y="125" fill="#79c0ff" font-size="13" font-weight="600" text-anchor="middle" font-family="'SF Mono', monospace">src/</text>
+
+  <!-- Trunk -->
+  <line x1="82" y1="134" x2="82" y2="898" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- ── animations/ ── -->
+  <line x1="82" y1="168" x2="110" y2="168" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="110" y="155" width="118" height="26" rx="5" fill="#2d2016" stroke="#d29922" stroke-width="1"/>
+  <text x="169" y="172" fill="#e3b341" font-size="12" font-weight="600" text-anchor="middle" font-family="'SF Mono', monospace">animations/</text>
+
+  <!-- animations vertical -->
+  <line x1="169" y1="181" x2="169" y2="300" stroke="#30363d" stroke-width="1"/>
+
+  <line x1="169" y1="200" x2="197" y2="200" stroke="#30363d" stroke-width="1"/>
+  <text x="204" y="204" fill="#8b949e" font-size="12" font-family="'SF Mono', monospace">gsap.config.ts</text>
+  <text x="365" y="204" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">registerPlugin, defaults globales</text>
+
+  <line x1="169" y1="224" x2="197" y2="224" stroke="#30363d" stroke-width="1"/>
+  <text x="204" y="228" fill="#8b949e" font-size="12" font-family="'SF Mono', monospace">presets.ts</text>
+  <text x="365" y="228" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">fadeInUp/Down, scaleIn, floatLoop</text>
+
+  <line x1="169" y1="248" x2="197" y2="248" stroke="#30363d" stroke-width="1"/>
+  <rect x="197" y="238" width="96" height="22" rx="4" fill="#2d2016" stroke="#d29922" stroke-width="0.5"/>
+  <text x="245" y="253" fill="#e3b341" font-size="11" text-anchor="middle" font-family="'SF Mono', monospace">sequences/</text>
+
+  <line x1="245" y1="260" x2="245" y2="300" stroke="#30363d" stroke-width="1"/>
+  <line x1="245" y1="270" x2="270" y2="270" stroke="#30363d" stroke-width="1"/>
+  <text x="277" y="274" fill="#6e7681" font-size="10.5" font-family="'SF Mono', monospace">hero · navbar · sommelier · project · jobs</text>
+  <line x1="245" y1="288" x2="270" y2="288" stroke="#30363d" stroke-width="1"/>
+  <text x="277" y="292" fill="#6e7681" font-size="10.5" font-family="'SF Mono', monospace">services · partners · collab · contact · pageTransition</text>
+
+  <line x1="169" y1="316" x2="197" y2="316" stroke="#30363d" stroke-width="1"/>
+  <text x="204" y="320" fill="#8b949e" font-size="12" font-family="'SF Mono', monospace">index.ts</text>
+  <text x="315" y="320" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">barrel export</text>
+
+  <!-- ── components/ ── -->
+  <line x1="82" y1="360" x2="110" y2="360" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="110" y="347" width="118" height="26" rx="5" fill="#12261e" stroke="#3fb950" stroke-width="1"/>
+  <text x="169" y="364" fill="#3fb950" font-size="12" font-weight="600" text-anchor="middle" font-family="'SF Mono', monospace">components/</text>
+
+  <line x1="169" y1="373" x2="169" y2="476" stroke="#30363d" stroke-width="1"/>
+
+  <line x1="169" y1="392" x2="197" y2="392" stroke="#30363d" stroke-width="1"/>
+  <text x="204" y="396" fill="#8b949e" font-size="12" font-family="'SF Mono', monospace">icons/</text>
+  <text x="285" y="396" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">SVGs logos y decorativos</text>
+
+  <line x1="169" y1="416" x2="197" y2="416" stroke="#30363d" stroke-width="1"/>
+  <rect x="197" y="406" width="84" height="22" rx="4" fill="#12261e" stroke="#3fb950" stroke-width="0.5"/>
+  <text x="239" y="421" fill="#3fb950" font-size="11" text-anchor="middle" font-family="'SF Mono', monospace">layouts/</text>
+
+  <line x1="239" y1="428" x2="239" y2="444" stroke="#30363d" stroke-width="1"/>
+  <line x1="239" y1="440" x2="264" y2="440" stroke="#30363d" stroke-width="1"/>
+  <text x="271" y="444" fill="#6e7681" font-size="11" font-family="'SF Mono', monospace">Navbar.astro</text>
+  <text x="392" y="444" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">scroll spy · dark mode · i18n</text>
+
+  <line x1="169" y1="464" x2="197" y2="464" stroke="#30363d" stroke-width="1"/>
+  <rect x="197" y="454" width="84" height="22" rx="4" fill="#12261e" stroke="#3fb950" stroke-width="0.5"/>
+  <text x="239" y="469" fill="#3fb950" font-size="11" text-anchor="middle" font-family="'SF Mono', monospace">sections/</text>
+
+  <line x1="239" y1="476" x2="239" y2="510" stroke="#30363d" stroke-width="1"/>
+  <line x1="239" y1="488" x2="264" y2="488" stroke="#30363d" stroke-width="1"/>
+  <text x="271" y="492" fill="#6e7681" font-size="11" font-family="'SF Mono', monospace">Hero · Project · Sommelier · Jobs</text>
+  <line x1="239" y1="508" x2="264" y2="508" stroke="#30363d" stroke-width="1"/>
+  <text x="271" y="512" fill="#6e7681" font-size="11" font-family="'SF Mono', monospace">Services · Partners · Collab · Contact</text>
+
+  <!-- ── hooks/ ── -->
+  <line x1="82" y1="552" x2="110" y2="552" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="110" y="539" width="72" height="26" rx="5" fill="#271d30" stroke="#bc8cff" stroke-width="1"/>
+  <text x="146" y="556" fill="#bc8cff" font-size="12" font-weight="600" text-anchor="middle" font-family="'SF Mono', monospace">hooks/</text>
+
+  <line x1="146" y1="565" x2="146" y2="585" stroke="#30363d" stroke-width="1"/>
+  <line x1="146" y1="581" x2="174" y2="581" stroke="#30363d" stroke-width="1"/>
+  <text x="181" y="585" fill="#8b949e" font-size="12" font-family="'SF Mono', monospace">useAnimation.ts</text>
+  <text x="345" y="585" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">React hook → presets GSAP</text>
+
+  <!-- ── i18n/ ── -->
+  <line x1="82" y1="625" x2="110" y2="625" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="110" y="612" width="60" height="26" rx="5" fill="#1c2a3a" stroke="#388bfd" stroke-width="1"/>
+  <text x="140" y="629" fill="#79c0ff" font-size="12" font-weight="600" text-anchor="middle" font-family="'SF Mono', monospace">i18n/</text>
+
+  <line x1="140" y1="638" x2="140" y2="692" stroke="#30363d" stroke-width="1"/>
+  <line x1="140" y1="652" x2="168" y2="652" stroke="#30363d" stroke-width="1"/>
+  <text x="175" y="656" fill="#8b949e" font-size="12" font-family="'SF Mono', monospace">es.json</text>
+  <text x="265" y="656" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">Español — base</text>
+  <line x1="140" y1="672" x2="168" y2="672" stroke="#30363d" stroke-width="1"/>
+  <text x="175" y="676" fill="#8b949e" font-size="12" font-family="'SF Mono', monospace">en.json</text>
+  <text x="265" y="676" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">English</text>
+  <line x1="140" y1="692" x2="168" y2="692" stroke="#30363d" stroke-width="1"/>
+  <text x="175" y="696" fill="#8b949e" font-size="12" font-family="'SF Mono', monospace">pt.json</text>
+  <text x="265" y="696" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">Português</text>
+
+  <!-- ── layouts/ ── -->
+  <line x1="82" y1="736" x2="110" y2="736" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="110" y="723" width="80" height="26" rx="5" fill="#12261e" stroke="#3fb950" stroke-width="1"/>
+  <text x="150" y="740" fill="#3fb950" font-size="12" font-weight="600" text-anchor="middle" font-family="'SF Mono', monospace">layouts/</text>
+
+  <line x1="150" y1="749" x2="150" y2="769" stroke="#30363d" stroke-width="1"/>
+  <line x1="150" y1="765" x2="178" y2="765" stroke="#30363d" stroke-width="1"/>
+  <text x="185" y="769" fill="#8b949e" font-size="12" font-family="'SF Mono', monospace">Layout.astro</text>
+  <text x="320" y="769" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">meta tags · ClientRouter</text>
+
+  <!-- ── pages/ ── -->
+  <line x1="82" y1="809" x2="110" y2="809" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="110" y="796" width="68" height="26" rx="5" fill="#1c2a3a" stroke="#388bfd" stroke-width="1"/>
+  <text x="144" y="813" fill="#79c0ff" font-size="12" font-weight="600" text-anchor="middle" font-family="'SF Mono', monospace">pages/</text>
+
+  <line x1="144" y1="822" x2="144" y2="842" stroke="#30363d" stroke-width="1"/>
+  <line x1="144" y1="838" x2="172" y2="838" stroke="#30363d" stroke-width="1"/>
+  <text x="179" y="842" fill="#8b949e" font-size="12" font-family="'SF Mono', monospace">[locale]/index.astro</text>
+  <text x="365" y="842" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">página principal por idioma</text>
+
+  <!-- ── styles/ ── -->
+  <line x1="82" y1="882" x2="110" y2="882" stroke="#30363d" stroke-width="1.5"/>
+  <rect x="110" y="869" width="68" height="26" rx="5" fill="#2d1b2e" stroke="#f778ba" stroke-width="1"/>
+  <text x="144" y="886" fill="#f778ba" font-size="12" font-weight="600" text-anchor="middle" font-family="'SF Mono', monospace">styles/</text>
+
+  <line x1="144" y1="895" x2="144" y2="915" stroke="#30363d" stroke-width="1"/>
+  <line x1="144" y1="911" x2="172" y2="911" stroke="#30363d" stroke-width="1"/>
+  <text x="179" y="915" fill="#8b949e" font-size="12" font-family="'SF Mono', monospace">global.css</text>
+  <text x="300" y="915" fill="#484f58" font-size="11" font-family="'Segoe UI', sans-serif">design tokens · dark mode · Tailwind v4</text>
+
+  <!-- LEGEND -->
+  <rect x="560" y="108" width="240" height="172" rx="7" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="680" y="128" fill="#6e7681" font-size="11" text-anchor="middle" font-family="'Segoe UI', sans-serif">leyenda</text>
+  <rect x="578" y="140" width="12" height="12" rx="3" fill="#2d2016" stroke="#d29922" stroke-width="1"/>
+  <text x="598" y="151" fill="#8b949e" font-size="11" font-family="'Segoe UI', sans-serif">Animaciones GSAP</text>
+  <rect x="578" y="162" width="12" height="12" rx="3" fill="#12261e" stroke="#3fb950" stroke-width="1"/>
+  <text x="598" y="173" fill="#8b949e" font-size="11" font-family="'Segoe UI', sans-serif">UI / Componentes Astro</text>
+  <rect x="578" y="184" width="12" height="12" rx="3" fill="#271d30" stroke="#bc8cff" stroke-width="1"/>
+  <text x="598" y="195" fill="#8b949e" font-size="11" font-family="'Segoe UI', sans-serif">Lógica React</text>
+  <rect x="578" y="206" width="12" height="12" rx="3" fill="#1c2a3a" stroke="#388bfd" stroke-width="1"/>
+  <text x="598" y="217" fill="#8b949e" font-size="11" font-family="'Segoe UI', sans-serif">Estructura / Routing</text>
+  <rect x="578" y="228" width="12" height="12" rx="3" fill="#2d1b2e" stroke="#f778ba" stroke-width="1"/>
+  <text x="598" y="239" fill="#8b949e" font-size="11" font-family="'Segoe UI', sans-serif">Estilos globales</text>
+  <text x="680" y="265" fill="#484f58" font-size="10" text-anchor="middle" font-family="'Segoe UI', sans-serif">Astro + React + TypeScript + Tailwind v4</text>
+  <text x="680" y="279" fill="#484f58" font-size="10" text-anchor="middle" font-family="'Segoe UI', sans-serif">GSAP · i18n (es/en/pt)</text>
+
+</svg>
