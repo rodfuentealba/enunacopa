@@ -55,19 +55,19 @@ const { t } = useTranslations(locale)
             src={grapeMedium.src}
             alt=""
             class="grape-3 top-[35%] left-[40%] md:top-[35%] md:left-[50%] lg:top-[35%] lg:left-[43%] absolute grape-medium"
-            data-gsap="float"
+            data-gsap="grape-3"
         />
         <img
             src={grapeSmall.src}
             alt=""
             class="grape-2 top-[15%] left-[0%] md:top-[25%] md:left-[0%] lg:top-[10%] lg:left-[12%] absolute grape-small"
-            data-gsap="float"
+            data-gsap="grape-2"
         />
         <img
             src={grapeBlur.src}
             alt=""
             class="grape-1 top-[0%] left-[30%] md:-top-20 md:left-[40%] lg:-top-20 lg:left-[35%] absolute grape-blur"
-            data-gsap="float"
+            data-gsap="grape-1"
         />
     </div>
 
@@ -216,3 +216,13 @@ const { t } = useTranslations(locale)
         }
     }
 </style>
+
+<script>
+import { initSommelierAnimations } from '../../animations'
+
+const grapes = initSommelierAnimations()
+
+if (import.meta.env.DEV) {
+  ;(window as any).__grapes = grapes
+}
+</script>

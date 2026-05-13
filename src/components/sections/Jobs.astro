@@ -114,6 +114,7 @@ const { t } = useTranslations(locale)
     position: relative;
     height: 100%;
     overflow: hidden;
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
   }
 
   .jobs-image-img {
@@ -154,3 +155,9 @@ const { t } = useTranslations(locale)
     }
   }
 </style>
+
+<script>
+import { jobsEntry } from '../../animations'
+
+jobsEntry()
+</script>

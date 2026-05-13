@@ -69,7 +69,6 @@ const { t } = useTranslations(locale)
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
     text-align: center;
   }
 
@@ -138,3 +137,9 @@ const { t } = useTranslations(locale)
     height: auto;
   }
 </style>
+
+<script>
+import { contactEntry } from '../../animations'
+
+contactEntry()
+</script>

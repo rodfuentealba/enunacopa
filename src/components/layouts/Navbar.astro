@@ -434,6 +434,10 @@ html.dark .drawer-langs .lang-btn {
 </style>
 
 <script>
+import { navbarEntry } from '../../animations'
+
+navbarEntry()
+
   // ── Dark mode ──────────────────────────────────────────────────────
   const themeBtn = document.getElementById('theme-btn')!
   const setTheme = (dark: boolean) => {
