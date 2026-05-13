@@ -83,9 +83,10 @@ npm run preview  # Preview local del build
 - [x] Language switch con `data-astro-reload`
 - [x] Optimización de imágenes a WebP + video H.265 (—69% peso total)
 - [x] Loader animado con entrada bounce + fade out al cargar página
+- [x] Cross-browser testing (Chromium, Firefox, WebKit) — 16/21 tests OK
 
 ### Próximas iteraciones
-- [ ] Testing cross-browser
+- [ ] Mejoras de performance y accesibilidad
 
 ---
 
