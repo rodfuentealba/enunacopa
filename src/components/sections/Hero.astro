@@ -1,5 +1,6 @@
 ---
-import bgHero from "../../assets/images/bgHero.mp4";
+import bgHeroH265 from "../../assets/images/bgHero.mp4";
+import bgHeroH264 from "../../assets/images/bgHero-h264.mp4";
 import { useTranslations } from '../../i18n'
 const { locale } = Astro.props
 const { t } = useTranslations(locale)
@@ -7,7 +8,10 @@ const { t } = useTranslations(locale)
 
 <section id="hero" class="hero">
 		<div class="hero-bg" aria-hidden="true">
-			<video src={bgHero} autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+			<video autoplay muted loop playsinline class="w-full h-full object-cover">
+				<source src={bgHeroH265.src} type='video/mp4; codecs="hvc1"'>
+				<source src={bgHeroH264.src} type='video/mp4'>
+			</video>
 			<div class="absolute inset-0 bg-linear-to-b from-black/50 to-black/30 dark:from-black/70 dark:to-black/50"></div>
 		</div>
 
