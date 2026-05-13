@@ -23,9 +23,9 @@ const { t } = useTranslations(locale)
 
       <!-- Selector de idioma -->
       <nav class="lang-nav me-3!" aria-label={t('navbar.aria.lang')}>
-        <a href="/es" class={"lang-btn" + (locale === 'es' ? ' lang-btn--active' : '')} style={locale === 'es' ? 'view-transition-name: lang-switch' : ''} lang="es" hreflang="es">{t('navbar.lang.es')}</a>
-        <a href="/en" class={"lang-btn" + (locale === 'en' ? ' lang-btn--active' : '')} style={locale === 'en' ? 'view-transition-name: lang-switch' : ''} lang="en" hreflang="en">{t('navbar.lang.en')}</a>
-        <a href="/pt" class={"lang-btn" + (locale === 'pt' ? ' lang-btn--active' : '')} style={locale === 'pt' ? 'view-transition-name: lang-switch' : ''} lang="pt" hreflang="pt">{t('navbar.lang.pt')}</a>
+        <a href="/es" class={"lang-btn" + (locale === 'es' ? ' lang-btn--active' : '')} lang="es" hreflang="es" data-astro-reload>{t('navbar.lang.es')}</a>
+        <a href="/en" class={"lang-btn" + (locale === 'en' ? ' lang-btn--active' : '')} lang="en" hreflang="en" data-astro-reload>{t('navbar.lang.en')}</a>
+        <a href="/pt" class={"lang-btn" + (locale === 'pt' ? ' lang-btn--active' : '')} lang="pt" hreflang="pt" data-astro-reload>{t('navbar.lang.pt')}</a>
       </nav>
 
       <!-- Dark / Light toggle -->
@@ -80,9 +80,9 @@ const { t } = useTranslations(locale)
         <a href="#collab"    class="drawer-link" data-close>{t('navbar.links.collab')}</a>
         <a href="#contact"   class="drawer-link" data-close>{t('navbar.links.contact')}</a>
         <div class="drawer-langs">
-          <a href="/es" class={"lang-btn" + (locale === 'es' ? ' lang-btn--active' : '')}>{t('navbar.lang.es')}</a>
-          <a href="/en" class={"lang-btn" + (locale === 'en' ? ' lang-btn--active' : '')}>{t('navbar.lang.en')}</a>
-          <a href="/pt" class={"lang-btn" + (locale === 'pt' ? ' lang-btn--active' : '')}>{t('navbar.lang.pt')}</a>
+          <a href="/es" class={"lang-btn" + (locale === 'es' ? ' lang-btn--active' : '')} data-astro-reload>{t('navbar.lang.es')}</a>
+          <a href="/en" class={"lang-btn" + (locale === 'en' ? ' lang-btn--active' : '')} data-astro-reload>{t('navbar.lang.en')}</a>
+          <a href="/pt" class={"lang-btn" + (locale === 'pt' ? ' lang-btn--active' : '')} data-astro-reload>{t('navbar.lang.pt')}</a>
         </div>
       </nav>
     </div>
