@@ -1,21 +1,30 @@
+---
+import bgHero from "../../assets/images/bgHero.MP4";
+import { useTranslations } from '../../i18n'
+const { locale } = Astro.props
+const { t } = useTranslations(locale)
+---
+
 <section id="hero" class="hero">
 		<div class="hero-bg" aria-hidden="true">
+			<video src={bgHero} autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+			<div class="absolute inset-0 bg-linear-to-b from-black/50 to-black/30 dark:from-black/70 dark:to-black/50"></div>
 		</div>
 
 		<div class="container hero-content">
-			<p class="eyebrow text-gray-950 dark:text-white">Camilo Chávez · Sommelier Internacional</p>
+			<p class="eyebrow text-amber-500 dark:text-white">{t('hero.eyebrow')}</p>
 
 			<h1 class="tagline text-pink-500">
-				El vino no se toma.<br /> Se interpreta.
+				{t('hero.tagline.line1')}<br /> {t('hero.tagline.line2')}
 			</h1>
 
-			<p class="sub text-black dark:text-white">
-				Es más que una degustación — es una invitación a<br />
-				<em>descubrir, sentir y recordar.</em>
+			<p class="sub text-gray-400 dark:text-white ">
+				{t('hero.sub.line1')}<br />
+				<em>{t('hero.sub.line2')}</em>
 			</p>
 
-			<a href="#project" class="cta-btn">
-				Saber más
+			<a href="#project" class="cta-btn text-white">
+				{t('hero.cta')}
 				<svg
 					width="14"
 					height="14"

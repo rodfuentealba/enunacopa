@@ -2,6 +2,10 @@
 import Logo from "../icons/euc.astro";
 import bgContact from "../../assets/images/bgContact.jpg";
 import CalendlyIcon from "../icons/calendly.astro";
+import { useTranslations } from '../../i18n'
+
+const { locale } = Astro.props
+const { t } = useTranslations(locale)
 ---
 
 <section id="contact" class="contact bg-black text-white">
@@ -12,19 +16,18 @@ import CalendlyIcon from "../icons/calendly.astro";
         <img src={bgContact.src} alt="" class="contact-image-img" />
       </div>
       <div class="contact-brand  top-1/5 left-1/4 lg:top-1/5 lg:left-1/5">
-        <span class="contact-chile text-pink-500 dark:text-gold z-10">Chile</span>
+        <span class="contact-chile text-pink-500 dark:text-gold z-10">{t('contact.chile')}</span>
         <Logo class="contact-logo text-white" />
-        <span class="contact-name text-pink-500 dark:text-gold">Camilo Chav&eacute;z</span>
+        <span class="contact-name text-pink-500 dark:text-gold">{t('contact.name')}</span>
       </div>
     </div>
 
     <div class="contact-right">
       <h1 class="contact-title">
-        Hablemos y Descorchemos
+        {t('contact.title')}
       </h1>
       <p class="contact-desc">
-        Agendemos una reunión de 30 minutos para ver la factibilidad de realizar
-        alg&uacute;n proyecto juntos.
+        {t('contact.desc')}
       </p>
       <a
         href="https://calendly.com/camilochavez/30min"
@@ -33,7 +36,7 @@ import CalendlyIcon from "../icons/calendly.astro";
         class="contact-cta inline-flex items-center justify-center bg-white dark:bg-blue-500 py-4! px-8! rounded-4xl text-blue-500 dark:text-white hover:scale-102 transition-transform duration-500 uppercase font-semibold tracking-wider hover:shadow-blue-950 hover:shadow-lg text-sm"
       >
         <CalendlyIcon class="w-7 h-7 mr-2!" />
-        Agender una reunión
+        {t('contact.cta')}
       </a>
     </div>
   </div>

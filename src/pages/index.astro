@@ -9,16 +9,19 @@ import Services from "../components/sections/Services.astro";
 import Partners from "../components/sections/Partners.astro";
 import Collab from "../components/sections/Collab.astro";
 import Contact from "../components/sections/Contact.astro";
+import { getLocaleFromUrl } from "../i18n";
+
+const locale = getLocaleFromUrl(Astro.url);
 ---
 
 <Layout>
-	<Navbar />
-	<Hero />
-	<Project />
-	<Sommelier />
-	<Jobs />
-	<Services />
-	<Partners />
-	<Collab />
-	<Contact />
+	<Navbar locale={locale} />
+	<Hero locale={locale} />
+	<Project locale={locale} />
+	<Sommelier locale={locale} />
+	<Jobs locale={locale} />
+	<Services locale={locale} />
+	<Partners locale={locale} />
+	<Collab locale={locale} />
+	<Contact locale={locale} />
 </Layout>

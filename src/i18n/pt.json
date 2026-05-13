@@ -1,0 +1,147 @@
+{
+  "navbar": {
+    "aria": {
+      "logo": "En Una Copa",
+      "lang": "Idioma",
+      "theme": "Alterar tema",
+      "menu": "Abrir menu",
+      "sections": "Seções",
+      "drawer": "Menu",
+      "closeMenu": "Fechar menu"
+    },
+    "lang": {
+      "es": "ES",
+      "en": "EN",
+      "pt": "PT"
+    },
+    "links": {
+      "hero": "Início",
+      "project": "Projeto",
+      "sommelier": "Sommelier",
+      "jobs": "Experiência",
+      "services": "Serviços",
+      "partners": "Parceiros",
+      "collab": "Colaboração",
+      "contact": "Contato"
+    }
+  },
+  "hero": {
+    "eyebrow": "Camilo Chávez · Sommelier Internacional",
+    "tagline": {
+      "line1": "O vinho não se bebe.",
+      "line2": "Se interpreta."
+    },
+    "sub": {
+      "line1": "Mais que uma degustação — é um convite para",
+      "line2": "descobrir, sentir e lembrar."
+    },
+    "cta": "Saiba mais"
+  },
+  "project": {
+    "p1": "No coração do deserto mais árido do mundo, nasce uma experiência que convida a descobrir",
+    "chile": "Chile.",
+    "p2": "Sob uma perspectiva sensorial, cultural e profundamente autêntica.",
+    "title": "Nosso projeto propõe uma viagem única.",
+    "p3": "percorrer a diversidade geográfica e cultural do país através de uma seleção cuidadosa de vinhos que representam seus diferentes vales, climas e tradições.",
+    "brand": "EnunaCopa"
+  },
+  "sommelier": {
+    "firstName": "Camilo",
+    "lastName": "Chávez",
+    "role": "Sommelier",
+    "since": "desde 2015",
+    "badge1": "Sommelier Internacional",
+    "badge2": "Certificado WSET 3",
+    "info1": "Tradutor de Idiomas",
+    "info2": "Especializado em vinhos",
+    "info3": "do velho e do novo mundo"
+  },
+  "jobs": {
+    "titleScript": "C",
+    "titleRest": "onfiaram",
+    "titleBreak": "em mim",
+    "alt": "Camilo Chávez com garrafa de vinho"
+  },
+  "services": {
+    "tiers": [
+      {
+        "firstLetter": "D",
+        "restOfTitle": "escubra",
+        "price": "$30.000 P/P - $25.000 TTOO",
+        "strongDescription": "<strong>3 taças:</strong>",
+        "description": "1 vinho branco, 1 vinho tinto suave e 1 vinho tinto encorpado.",
+        "time": "40-50 MIN."
+      },
+      {
+        "firstLetter": "E",
+        "restOfTitle": "xplore",
+        "price": "$40.000 P/P - $33.000 TTOO",
+        "strongDescription": "<strong>5 taças:</strong>",
+        "description": "2 vinhos brancos e 3 tintos de diferentes intensidades.",
+        "time": "80-90 MIN."
+      },
+      {
+        "firstLetter": "M",
+        "restOfTitle": "ergulhe",
+        "price": "$50.000 P/P - $42.000 TTOO",
+        "strongDescription": "<strong>7 taças:</strong>",
+        "description": "1 espumante, 2 vinhos brancos, 4 vinhos tintos de diferentes intensidades.",
+        "time": "80-90 MIN."
+      }
+    ],
+    "footer": {
+      "note1": "Todas as degustações incluem pão, azeitonas, azeite e queijo mantecoso.",
+      "note2": "* Inclui apresentação visual dos vales, terroir e vinícola produtora.",
+      "note3": "* Todas apresentam, pelo menos, 3 vales chilenos diferentes.",
+      "note4": "*Mínimo de 6 pax e máximo de 12 pax."
+    }
+  },
+  "partners": {
+    "intro": "Na <strong>En Una Copa</strong> trabalhamos com alianças estratégicas que nos permitem oferecer experiências autênticas e de alta qualidade. Conheça nossos três pilares de colaboração.",
+    "tiers": [
+      {
+        "firstLetter": "A",
+        "restOfTitle": "gências",
+        "dots": [
+          "<strong>Tarifa líquida preferencial = Comissão por passageiro</strong>",
+          "Confirmação rápida e operação flexível",
+          "Material de apoio <i>(descrição, imagens, storytelling)</i>"
+        ]
+      },
+      {
+        "firstLetter": "H",
+        "restOfTitle": "otéis",
+        "dots": [
+          "<strong>Experiência para hóspedes (in loco ou encaminhamento)</strong>",
+          "Comissão por venda / taxa por hóspede",
+          "Possibilidade de eventos exclusivos para o hotel/hostel"
+        ]
+      },
+      {
+        "firstLetter": "P",
+        "restOfTitle": "arceiros",
+        "dots": [
+          "Integração em experiências combinadas <i>(gastronomia, wellness, etc.)</i>",
+          "Ativações especiais ou eventos"
+        ]
+      }
+    ]
+  },
+  "collab": {
+    "p1": "Convidamos agências, hotéis e atores do ecossistema turístico a fazer parte desta experiência, incorporando uma proposta única que permite a seus clientes descobrir o Chile sob uma perspectiva inovadora, sensorial e memorável.",
+    "heading1": "Conhecer o Chile",
+    "heading2": "através de uma taça de vinho",
+    "p2": "Não apenas complementa a oferta existente, mas enriquece a experiência de viagem, gerando um vínculo mais profundo entre o visitante e o território. Estamos disponíveis para coordenar reuniões, degustações demonstrativas ou desenvolver propostas personalizadas conforme suas necessidades."
+  },
+  "contact": {
+    "chile": "Chile",
+    "name": "Camilo Chávez",
+    "title": "Vamos Conversar e Abrir",
+    "desc": "Vamos agendar uma reunião de 30 minutos para ver a viabilidade de realizar algum projeto juntos.",
+    "cta": "Agendar uma reunião"
+  },
+  "layout": {
+    "title": "En Una Copa — Camilo Chávez Sommelier",
+    "description": "Portfólio digital de Camilo Chávez, Sommelier Internacional certificado WSET 3."
+  }
+}

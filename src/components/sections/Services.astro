@@ -1,35 +1,17 @@
 ---
 import bgServices from "../../assets/images/bgServices.jpg";
 import IconTime from "../icons/iconTime.astro";
+import { useTranslations } from '../../i18n'
 
-const services = [
-    {
-        firstLetter: "D",
-        restOfTitle: "escubre",
-        price: "$30.000 P/P - $25.000 TTOO",
-        strongDescription: "<strong>3 copas:</strong>",
-        description:
-            "1 vino blanco, 1 vino tinto suave y 1 vino tinto de cuerpo. cluido.",
-        time: "40-50 MIN.",
-    },
-    {
-        firstLetter: "E",
-        restOfTitle: "xplora",
-        price: "$40.000 P/P - $33.000 TTOO",
-        strongDescription: "<strong>5 copas:</strong>",
-        description: "2 vinos blancos y 3 tintos de distinta intensidad.",
-        time: "80-90 MIN.",
-    },
-    {
-        firstLetter: "S",
-        restOfTitle: "umérgete",
-        price: "$50.000 P/P - $42.000 TTOO",
-        strongDescription: "<strong>7 copas:</strong>",
-        description:
-            "1 copa de espumante, 2 copas de blanco, 4 copas de tinto de distinta intensidad.",
-        time: "80-90 MIN.",
-    },
-];
+const { locale } = Astro.props
+const { t, tArray } = useTranslations(locale)
+const services = tArray<any>('services.tiers')
+const footer = {
+    note1: t('services.footer.note1'),
+    note2: t('services.footer.note2'),
+    note3: t('services.footer.note3'),
+    note4: t('services.footer.note4'),
+}
 ---
 
 <section
@@ -86,19 +68,16 @@ const services = [
                         <p
                             class="text-xs font-bold text-gray-800 dark:text-white"
                         >
-                            Todas las degustaciones incluyen pan, aceitunas,
-                            aceite de oliva y queso mantecoso.
+                            {footer.note1}
                         </p>
                         <p class="text-xs text-gray-800 dark:text-white">
-                            * Incluye presentación visual de valles, terroir y
-                            bodega productora.
+                            {footer.note2}
                         </p>
                         <p class="text-xs text-gray-800 dark:text-white">
-                            * Todas presentan, por lo menos, 3 valles chilenos
-                            diferentes.
+                            {footer.note3}
                         </p>
                         <p class="text-xs text-gray-800 dark:text-white">
-                            *Mínimo para realizar son 6 pax y máximo 12 pax.
+                            {footer.note4}
                         </p>
                     </div>
                 </div>

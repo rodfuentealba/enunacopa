@@ -1,5 +1,9 @@
 ---
 import bgCollab from "../../assets/images/bgCollab.jpg";
+import { useTranslations } from '../../i18n'
+
+const { locale } = Astro.props
+const { t } = useTranslations(locale)
 ---
 
 <section
@@ -12,16 +16,16 @@ import bgCollab from "../../assets/images/bgCollab.jpg";
   <div class="relative w-full pb-[50vh]">
     <div class="container mx-auto px-4 text-center">
       <p class="collab-medium text-white mix-blend-difference">
-        Invitamos a agencias, hoteles y actores del ecosistema turístico a ser parte de esta experiencia, incorporando una propuesta única que permite a sus clientes descubrir Chile desde una perspectiva innovadora, sensorial y memorable.
+        {t('collab.p1')}
       </p>
 
       <h2 class="collab-display leading-12! lg:leading-20!">
-        <span class="text-white mix-blend-difference">Conocer Chile</span>
-        <span class="md:text-xl lg:text-9xl! text-white mix-blend-difference">a través de una copa de vino</span>
+        <span class="text-white mix-blend-difference">{t('collab.heading1')}</span>
+        <span class="md:text-xl lg:text-9xl! text-white mix-blend-difference">{t('collab.heading2')}</span>
       </h2>
 
       <p class="collab-small text-olive-400 dark:text-white">
-        No solo complementa la oferta existente, sino que enriquece la experiencia de viaje, generando un vínculo más profundo entre el visitante y el territorio. Quedamos disponibles para coordinar reuniones, degustaciones de muestra o desarrollar propuestas a medida según sus necesidades.
+        {t('collab.p2')}
       </p>
     </div>
   </div>

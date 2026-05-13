@@ -1,28 +1,18 @@
 ---
 import bgPartners from "../../assets/images/bgPartners.jpg";
+import { useTranslations } from '../../i18n'
 
-const partners = [
-    {
-        firstLetter: "A",
-        restOfTitle: "gencias",
-        dot01:"<strong>Tarifa neta preferencial = Comisión por pasajero</strong>",
-        dot02:"Confirmación rápida y operación flexible",
-        dot03:"Material de apoyo <i>(descripción, imágenes, storytelling)</i>"
-    },
-    {
-        firstLetter: "H",
-        restOfTitle: "oteles",
-        dot01:"<strong>Experiencia para huéspedes (in situ o derivación)</strong>",
-        dot02:"Comisión por venta / fee por huésped",
-        dot03:"Posibilidad de eventos exclusivos para el hotel/hostal"
-    },
-    {
-        firstLetter: "P",
-        restOfTitle: "artners",
-        dot01:"Integración en experiencias combinadas <i>(gastronomía, wellness, etc.)</i>",
-        dot02:"Activaciones especiales o eventos",
-    },
-];
+const { locale } = Astro.props
+const { t, tArray } = useTranslations(locale)
+
+interface Partner {
+    firstLetter: string
+    restOfTitle: string
+    dots: string[]
+}
+
+const partners = tArray<Partner>('partners.tiers')
+const intro = t('partners.intro')
 ---
 
 <section
@@ -43,12 +33,8 @@ const partners = [
                 <div class="flex flex-col items-center justify-end md:pb-30!">
                     <p
                         class="text-sm text-gray-300 dark:text-gray-300 max-w-md text-center md:text-left leading-relaxed"
+                        set:html={intro}
                     >
-                        En <strong class="text-emerald-300 dark:text-emerald-500"
-                            >En Una Copa</strong
-                        > trabajamos con alianzas estratégicas que nos permiten ofrecer
-                        experiencias auténticas y de alta calidad. Conoce nuestros
-                        tres pilares de colaboración.
                     </p>
                 </div>
 
@@ -64,12 +50,12 @@ const partners = [
                                     </span>
                                     {partner.restOfTitle}
                                 </h3>
-                                <p class="ser-serif text-md text-gray-300 dark:text-gray-300 max-w-md" set:html={partner.dot01}>
-                                </p>
-                                <p class="ser-serif text-md text-gray-300 dark:text-gray-300 max-w-md" set:html={partner.dot02}>   
-                                </p>
-                                <p class="ser-serif text-md text-gray-300 dark:text-gray-300 max-w-md" set:html={partner.dot03}>   
-                                </p>
+                                {
+                                    partner.dots.map((dot: string) => (
+                                        <p class="ser-serif text-md text-gray-300 dark:text-gray-300 max-w-md" set:html={dot}>
+                                        </p>
+                                    ))
+                                }
                             </div>
                         ))
                     }

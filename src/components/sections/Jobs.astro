@@ -6,6 +6,10 @@ import MiguelTorres from '../icons/logos/migueltorres.astro'
 import Emiliana from '../icons/logos/emiliana.astro'
 import Matetic from '../icons/logos/matetic.astro'
 import bgJobs from '../../assets/images/bgJobs.png'
+import { useTranslations } from '../../i18n'
+
+const { locale } = Astro.props
+const { t } = useTranslations(locale)
 ---
 
 <section id="jobs" class="jobs bg-yellow-50 text-yellow-800 dark:bg-yellow-950 dark:text-yellow-100">
@@ -13,8 +17,7 @@ import bgJobs from '../../assets/images/bgJobs.png'
     <!-- Izquierda: Títulos + Logos -->
     <div class="jobs-content mt-0 md:mt-20!">
       <h2 class="jobs-title text-right">
-        <span class="jobs-title-script">C</span>onfiaron
-        <br>en mí
+        <span class="jobs-title-script">{t('jobs.titleScript')}</span>{t('jobs.titleRest')}<br>{t('jobs.titleBreak')}
       </h2>
 
       <div class="flex flex-col items-center gap-12 mt-10!">
@@ -40,7 +43,7 @@ import bgJobs from '../../assets/images/bgJobs.png'
       <div class="jobs-image" aria-hidden="true">
         <img
           src={bgJobs.src}
-          alt="Camilo Chávez con botella de vino"
+          alt={t('jobs.alt')}
           class="jobs-image-img"
         />
       </div>

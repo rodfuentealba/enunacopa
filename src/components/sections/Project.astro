@@ -1,6 +1,10 @@
 ---
 import bgProject from "../../assets/images/bgProject.webp";
 import FooterIc from "../../components/icons/euc.astro";
+import { useTranslations } from '../../i18n'
+
+const { locale } = Astro.props
+const { t } = useTranslations(locale)
 ---
 
 <section id="project">
@@ -15,23 +19,19 @@ import FooterIc from "../../components/icons/euc.astro";
         <div class="container project-grid">
             <div>
                 <p class="text-white dark:text-black text-sm md:text-lg">
-                    En el corazón del desierto más árido del mundo, nace una
-                    experiencia que invitar a descubrir
+                    {t('project.p1')}
                 </p>
-                <span class="project-chile text-6xl md:text-8xl text-yellow-600 dark:text-yellow-900">Chile.</span>
+                <span class="project-chile text-6xl md:text-8xl text-yellow-600 dark:text-yellow-900">{t('project.chile')}</span>
                 <p class="text-white dark:text-black text-sm md:text-lg">
-                    Desde una perspectiva sensorial, cultural y profundamente
-                    auténtica.
+                    {t('project.p2')}
                 </p>
             </div>
             <div>
                 <p class="text-yellow-600 dark:text-yellow-900 text-2xl font-bold md:text-5xl md:leading-12">
-                    Nuestro proyecto propone un viaje único.
+                    {t('project.title')}
                 </p>
                 <p class="text-white dark:text-black  text-sm md:text-lg md:leading-10 mt-8!">
-                    recorrer la diversidad geográfica y cultural del país a
-                    través de una cuidada selección de vinos que representan sus
-                    distintos valles, climas y tradiciones.
+                    {t('project.p3')}
                 </p>
             </div>
         </div>
@@ -42,7 +42,7 @@ import FooterIc from "../../components/icons/euc.astro";
         <div class="project-brand-icon" aria-hidden="true">
             <FooterIc width="90%" height="90%" class="text-white dark:text-black"/>
         </div>
-        <h2 class="project-brand-name text-7xl md:text-9xl text-black dark:text-white">EnunaCopa</h2>
+        <h2 class="project-brand-name text-7xl md:text-9xl text-black dark:text-white">{t('project.brand')}</h2>
     </div>
 </section>
 
