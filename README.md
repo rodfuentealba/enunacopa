@@ -1,12 +1,12 @@
-# 🍷 En Una Copa
+# En Una Copa
 ## Private Wine Tasting Experience
 
 > Portfolio digital multilenguaje para **Camilo Chávez**, Sommelier Internacional certificado WSET 3.
 > Diseñado y desarrollado por [Rodolfo Fuentealba](https://rodfuentealba.com).
 
-Una experiencia web que reemplaza el PDF estático por un portfolio digital inmersivo — diferencial real dentro del ecosistema sommelier en Chile y Latinoamérica.
+Experiencia web que reemplaza el PDF estático por un portfolio digital inmersivo — diferencial real dentro del ecosistema sommelier en Chile y Latinoamérica.
 
-El concepto **"En Una Copa"** es geográficamente escalable: _Chile en una Copa_, _El Norte en una Copa_, _Italia en una Copa_ — el mismo sitio, distintos territorios.
+El concepto **"En Una Copa"** es geográficamente escalable: _Chile en una Copa_, _El Norte en una Copa_, _Italia en una Copa_.
 
 ---
 
@@ -17,60 +17,88 @@ El concepto **"En Una Copa"** es geográficamente escalable: _Chile en una Copa_
 | [Astro 6](https://astro.build) | Framework principal + routing i18n nativo |
 | [React 19](https://react.dev) | Componentes interactivos (islands) |
 | [Tailwind CSS 4](https://tailwindcss.com) | Sistema visual |
-| [GSAP 3](https://gsap.com) | Animaciones y transiciones |
+| [GSAP 3](https://gsap.com) | Animaciones (ScrollTrigger, MotionPathPlugin) |
 | [TypeScript](https://www.typescriptlang.org) | Tipado estático |
 
-**Tipografías:** Allison · Alexandria · Faustina — Google Fonts
+**Tipografías:** Allison (display) · Alexandria (sans) · Faustina (serif) — Google Fonts
 
 ---
 
-## Estructura prevista
+## Estructura
 
 ```
 src/
+├── animations/
+│   ├── gsap.config.ts              ← registerPlugin, defaults globales
+│   ├── presets.ts                  ← fadeInUp/Down/Left/Right, scaleIn, floatLoop
+│   ├── sequences/
+│   │   ├── heroSequence.ts         ← Hero: entrada desde abajo
+│   │   ├── navbarEffects.ts        ← Navbar: logo, controles, texto, links
+│   │   ├── sommelierEffects.ts     ← Parallax, entry/exit, grape controllers
+│   │   ├── projectEffects.ts       ← Columnas desde izq/der, brand desde abajo
+│   │   ├── jobsEffects.ts          ← Clip-path reveal + staggered logos
+│   │   ├── servicesEffects.ts      ← Servicios desde izq, footer desde der
+│   │   ├── partnersEffects.ts      ← Partners desde der, intro desde izq
+│   │   ├── collabEffects.ts        ← Fade desde arriba/abajo
+│   │   ├── contactEffects.ts       ← Imagen, brand, título, desc + CTA
+│   │   └── pageTransition.ts       ← pageEnter / pageLeave
+│   └── index.ts                    ← barrel export
 ├── components/
-│   ├── layout/        # Navbar, Footer
-│   └── sections/      # Hero, Project, Sommelier, Services...
+│   ├── icons/                      ← SVGs (logos, decorativos)
+│   ├── layouts/
+│   │   └── Navbar.astro            ← Fixed nav con scroll spy, dark mode, i18n
+│   └── sections/
+│       ├── Hero.astro
+│       ├── Project.astro
+│       ├── Sommelier.astro
+│       ├── Jobs.astro
+│       ├── Services.astro
+│       ├── Partners.astro
+│       ├── Collab.astro
+│       └── Contact.astro
+├── hooks/
+│   └── useAnimation.ts             ← Hook React para consumir presets GSAP
 ├── i18n/
-│   ├── es.json        # Español (idioma base)
-│   ├── en.json        # English
-│   └── pt.json        # Português
+│   ├── es.json                     ← Español (base)
+│   ├── en.json                     ← English
+│   └── pt.json                     ← Português
 ├── layouts/
-│   └── Layout.astro   # Layout base con dark mode y meta tags
+│   └── Layout.astro                ← Layout base + meta tags + ClientRouter
 ├── pages/
-│   └── index.astro    # Entrada → /es por defecto
+│   └── [locale]/index.astro        ← Página principal por idioma
 └── styles/
-    └── global.css     # Design tokens y variables CSS
+    └── global.css                  ← Design tokens, dark mode, Tailwind v4
 ```
+
+---
+
+## Animaciones por sección
+
+| Sección | Efecto entrada | Efecto salida (scroll up) |
+|---|---|---|
+| **Navbar** | Logo ← izq · Controles → der · Texto centro ↓ arriba · Links ↑ abajo (stagger) | Fade out |
+| **Hero** | Todos los elementos ↑ desde abajo (stagger) en load | — |
+| **Project** | Columna izq ← izq · Columna der → der · Brand ↑ desde abajo | Fade out |
+| **Sommelier** | Nombre/rol/since ← izq · WSET scale-in · Info ↑ abajo | Fade out |
+| | Capas de Camilo: parallax con scrub (diferentes velocidades) | — |
+| | Uvas: flotación continua individual por controlador | — |
+| **Jobs** | Imagen: clip-path diagonal reveal · Título + logos ← izq (stagger) | Fade out |
+| **Services** | Tarjetas ← izq (stagger) · Footer notes → der (stagger) | Fade out |
+| **Partners** | Partners → der (stagger) · Intro ← izq | Fade out |
+| **Collab** | Texto medio ↓ arriba · Heading ↓ arriba · Small ↑ abajo | Fade out |
+| **Contact** | Imagen ↑ abajo · Brand scale desde centro (stagger) · Título ↑ abajo · Desc + CTA → der | Fade out |
 
 ---
 
 ## Multilenguaje
 
-El sitio soporta tres idiomas vía i18n nativo de Astro 6.
-El contenido vive en `src/i18n/{lang}.json` — sin dependencias externas.
+Sitio con i18n nativo de Astro 6. Cambio de idioma via `data-astro-reload` (recarga completa para evitar conflictos con GSAP).
 
 | Idioma | Ruta | Estado |
 |---|---|---|
-| Español | `/es` | 🟡 En desarrollo |
-| English | `/en` | ⚪ Pendiente |
-| Português | `/pt` | ⚪ Pendiente |
-
----
-
-## Secciones
-
-| # | Sección | Descripción |
-|---|---|---|
-| — | **Loader** | Animación de entrada + transición GSAP hacia Hero |
-| 1 | **Hero** | Tagline + fondo inmersivo |
-| 2 | **Project** | Concepto y zona geográfica |
-| 3 | **Sommelier** | Biografía y certificaciones |
-| 4 | **Jobs** | Marcas — "Confiaron en mí" |
-| 5 | **Services** | Tiers de experiencia con precios |
-| 6 | **Partners** | Agencias, Hoteles, B2B |
-| 7 | **Colab** | CTA de colaboración |
-| 8 | **Contact** | Formulario + RRSS |
+| Español | `/es` | ✅ Completo |
+| English | `/en` | ✅ Completo |
+| Português | `/pt` | ✅ Completo |
 
 ---
 
@@ -80,36 +108,42 @@ El contenido vive en `src/i18n/{lang}.json` — sin dependencias externas.
 git clone https://github.com/rodfuentealba/enunacopa.git
 cd enunacopa
 npm install
-npm run dev
-# → http://localhost:4321
+npm run dev      # → http://localhost:4321
 ```
 
-**Node requerido:** `>=22.12.0`
+**Node:** `>=22.12.0`
 
 ```bash
-npm run build    # Build de producción → ./dist/
-npm run preview  # Preview del build local
+npm run build    # → ./dist/
+npm run preview  # Preview local del build
 ```
 
 ---
 
 ## Roadmap
 
-### `main` — Base ✅
+### `main` — Base + Animaciones ✅
 - [x] Astro 6 + React + Tailwind + GSAP instalados
 - [x] i18n configurado (es / en / pt)
-- [x] README
+- [x] Arquitectura de animaciones (`src/animations/`)
+- [x] Navbar con scroll spy, dark mode, selector de idioma, entrada GSAP
+- [x] Hero con entrada desde abajo
+- [x] Project con columnas desde izquierda/derecha
+- [x] Sommelier con parallax, uvas flotantes, entry/exit
+- [x] Jobs con clip-path reveal + staggered logos
+- [x] Services con tarjetas desde izquierda
+- [x] Partners con contenido desde derecha
+- [x] Collab con fade desde arriba/abajo
+- [x] Contact con imagen, brand scale, contenido desde derecha
+- [x] Fade out en scroll up para todas las secciones
+- [x] Hook React `useAnimation` para islands
+- [x] Language switch con `data-astro-reload`
 
-### `feat/hero` — En progreso
-- [ ] Layout base + design tokens
-- [ ] Navbar con scroll spy, dark mode y selector de idioma
-- [ ] Hero con tipografía y fondo
-
-### Futuras ramas
-- `feat/sections` — Project, Sommelier, Jobs, Services, Partners
-- `feat/contact` — Formulario de contacto
-- `feat/loader` — Loader animado con transición GSAP (último paso)
-- `feat/i18n` — Carpetas `/en` y `/pt` con traducciones
+### Próximas iteraciones
+- [ ] Loader animado con transición GSAP
+- [ ] Formulario de contacto funcional
+- [ ] Optimización de imágenes y assets
+- [ ] Testing cross-browser
 
 ---
 
@@ -117,8 +151,6 @@ npm run preview  # Preview del build local
 
 **Rodolfo Fuentealba** — Diseño y desarrollo web
 [rodfuentealba.com](https://rodfuentealba.com) · [GitHub](https://github.com/rodfuentealba)
-
----
 
 ## Cliente
 
