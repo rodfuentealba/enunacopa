@@ -9,25 +9,29 @@ import Services from "../../components/sections/Services.astro";
 import Partners from "../../components/sections/Partners.astro";
 import Collab from "../../components/sections/Collab.astro";
 import Contact from "../../components/sections/Contact.astro";
+import Footer from "../../components/sections/Footer.astro";
 export function getStaticPaths() {
-  return [
-    { params: { locale: 'es' } },
-    { params: { locale: 'en' } },
-    { params: { locale: 'pt' } },
-  ];
+	return [
+		{ params: { locale: "es" } },
+		{ params: { locale: "en" } },
+		{ params: { locale: "pt" } },
+	];
 }
 
-const locale = Astro.params.locale ?? 'es';
+const locale = Astro.params.locale ?? "es";
 ---
 
 <Layout>
 	<Navbar locale={locale} />
-	<Hero locale={locale} />
-	<Project locale={locale} />
-	<Sommelier locale={locale} />
-	<Jobs locale={locale} />
-	<Services locale={locale} />
-	<Partners locale={locale} />
-	<Collab locale={locale} />
-	<Contact locale={locale} />
+	<main>
+		<Hero locale={locale} />
+		<Project locale={locale} />
+		<Sommelier locale={locale} />
+		<Jobs locale={locale} />
+		<Services locale={locale} />
+		<Partners locale={locale} />
+		<Collab locale={locale} />
+		<Contact locale={locale} />
+	</main>
+	<Footer />
 </Layout>

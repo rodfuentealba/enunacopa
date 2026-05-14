@@ -13,7 +13,7 @@ const { t } = useTranslations(locale)
     <!-- Left column: image + brand overlay -->
     <div class="contact-left">
       <div class="contact-image" aria-hidden="true">
-        <img src={bgContact.src} alt="" class="contact-image-img" />
+        <img src={bgContact.src} alt="" class="contact-image-img" loading="lazy" />
       </div>
       <div class="contact-brand  top-1/5 left-1/4 lg:top-1/5 lg:left-1/5">
         <span class="contact-chile text-pink-500 dark:text-gold z-10">{t('contact.chile')}</span>
@@ -23,9 +23,9 @@ const { t } = useTranslations(locale)
     </div>
 
     <div class="contact-right">
-      <h1 class="contact-title">
+      <h2 class="contact-title">
         {t('contact.title')}
-      </h1>
+      </h2>
       <p class="contact-desc">
         {t('contact.desc')}
       </p>
