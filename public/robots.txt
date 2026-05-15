@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://enunacopa.com/sitemap-index.xml
+Sitemap: https://www.camilocram.info/sitemap-index.xml
