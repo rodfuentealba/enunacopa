@@ -3,6 +3,8 @@ import '../styles/global.css'
 import ClientRouter from 'astro/components/ClientRouter.astro'
 import { useTranslations, getLocaleFromUrl } from '../i18n'
 import Loader from '../components/Loader.astro'
+import { inject } from '@vercel/analytics'
+inject()
 
 interface Props {
   title?: string
